@@ -1,6 +1,6 @@
 class CommentsController {
   constructor() {
-    this.$addCommentForm = $('[id=add_comment]')
+    this.$addCommentForm = $('.add-comment')
   }
 
   init() {

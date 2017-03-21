@@ -5,7 +5,7 @@ function ImagesController() {
   this.$imageTitleInput = $('#image_title');
   this.$imageUrlInput = $('#image_url');
   this.$selectImageMenu = $('#select_image');
-  this.$addCommentForm = $('#add_comment');
+  this.$addCommentForm = $('#add-comment');
   this.$wrapper = $('#wrapper');
 }
 
@@ -22,6 +22,10 @@ ImagesController.prototype.destroyImageLiveEventListener = function(){
     $(this).parents('.image').remove();
   });
 };
+
+ImagesController.render = function(image) {
+  $('#images').append(image.imageEl());
+}
 
 ImagesController.prototype.init = function() {
   this.hideCommentForm();

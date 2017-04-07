@@ -14,8 +14,8 @@ class CommentsController {
 				let $parent = $(event.currentTarget).parent(); // grab the info from the parent ul
 				let $input = $(event.currentTarget).find(".user-text"); // grab the info from the input text-field tag
 				let comment = new Comment($input.val(), parseInt($parent.data().id))
-				$input.val(""); // reset the input box
 				commentsController.render(comment);
+				$input.val(""); // reset the input box
 			})
 		});
 	}

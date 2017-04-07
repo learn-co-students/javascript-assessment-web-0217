@@ -1,16 +1,16 @@
 // create Comment class here
-var comments = []
+Comment.all = []
 
 class Comment {
 	constructor(comment, imageId) {
 		this.id = imageId;
 		this.image = this.findImage(imageId);
 		this.commentContent = comment;
-		comments.push(this);
+		Comment.all.push(this);
 	}
 
 	static all() {
-		return comments;
+		return Comment.all;
 	}
 
 	findImage(imageId) {

@@ -35,12 +35,12 @@ Build out the following methods on the `CommentsController` class (Use ES6 synta
 
 Build the following on the comment class model (Use ES6 syntax)
 
-+ `new Comment(comment, imageId)`
+<!-- + `new Comment(comment, imageId)`
   + should initialize with an id, image object (findImage) and commentContent (the actual text of the comment)
-  + should save new comment to Comment.all property
-+ `Comment.all`
+  + should save new comment to Comment.all property -->
+<!-- + `Comment.all`
   + should return all of the comment objects in an array
-  + a property of the Comment class
+  + a property of the Comment class -->
 + `Comment.prototype.findImage(imageId)`
   + given an `int` for an image id, returns the image object with that id
   + before return - adds current comment to image's comments property

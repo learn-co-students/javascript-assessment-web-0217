@@ -4,10 +4,18 @@ class CommentsController {
   }
 
   init() {
-    // kick off controller from here
+    this.addCommentFormListener()
   }
 
   addCommentFormListener() {
-    // create comment form listener code here
+    this.on('submit', this.$addCommentForm.map(function(comment){
+      var newComment = new Comment(comment.imageId, comment.commentContent)
+      CommentsController.render(newComment)
+    }))
   }
+
+    render(commentObject){
+      $('ul').append(commentObject.commentEl())
+     }
+
 }

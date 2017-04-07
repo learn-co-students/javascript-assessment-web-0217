@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline|Press+Start+2P');
+
+body {
+  background-color: purple;
+  text-align: center;
+}
+
+h1 {
+  color: red;
+  font-family: 'Press Start 2P', cursive;
+}
+
+h2 {
+  color: orange;
+  font-family: 'Bungee Hairline', cursive;
+}
+
+input[id^='comment-description'] {
+  border-radius: 10px;
+  height: 25px;
+  text-transform: center;
+  background-color: aqua;
+  border: none;
+  box-shadow: 10px 10px 5px #fbff00
+}
+
+label {
+  color: aqua;
+}
+
+#submit {
+  margin-left: 10px;
+}
+
+.destroy-image {
+  background-color: green;
+  border: none;
+  margin-right: 15px;
+  color: white;
+}
+
+li {
+  margin-top: 15px;
+  font-size: 100px;
+  list-style-type: none;
+  background-color: #FF69B4;
+  border-radius: 100px;
+}
+
+.dino {
+  background-image: url('../img/surprise.jpg');
+  background-position: cover;
+  /*background-color: red;*/
+}

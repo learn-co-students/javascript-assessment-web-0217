@@ -11,9 +11,10 @@ class CommentsController {
 		this.$addCommentForm.each((index, form) => {
 			form.addEventListener("submit", (event) => {
 				event.preventDefault();
-				let parentInfo = $(event)[0].target.parentNode; // grab the info from the parent ul
-				let value = event.currentTarget.children[1].value; // grab the value of the input tag
-				let comment = new Comment(value, parseInt(parentInfo.dataset.id))
+				let parentInfo = event.currentTarget.parentNode; // grab the info from the parent ul
+				let $input = $(event.currentTarget).find(".user-text"); // grab the info from the input text-field tag
+				let comment = new Comment($input.val(), parseInt(parentInfo.dataset.id))
+				$input.val(""); // reset the input box
 				commentsController.render(comment);
 			})
 		});

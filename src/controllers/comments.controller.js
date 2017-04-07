@@ -4,10 +4,26 @@ class CommentsController {
   }
 
   init() {
-    // kick off controller from here
+    $('.add-comment').click(function(){
+      addCommentFormListener();
+     });
   }
 
-  addCommentFormListener() {
-    // create comment form listener code here
+addCommentFormListener() {
+ var comm = document.getElementById("add-comment");
+ var ul = document.createElement("ul");
+ var formlength = comm.length ;
+
+ for (var i = 0; i < formlength; i++) {
+    comm[i].addEventListener("submit",
+      function(event){
+
+        event.preventDefault();
+      })
   }
+}
+
+render(commentObject){
+
+}
 }

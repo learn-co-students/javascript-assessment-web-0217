@@ -21,7 +21,7 @@ class CommentsController {
 
 	render(commentObj) {
 		let id = commentObj.image.id;
-		let $commentListSelector = $(`#image-${id} ul`);
-		$commentListSelector.append(commentObj.commentEl());
+		let $commentListSelector = $(`#image-${id} ul`); // grab the image's parent which is the ul
+		$commentListSelector.append(commentObj.commentEl()); // and append the new comment
 	}
 }

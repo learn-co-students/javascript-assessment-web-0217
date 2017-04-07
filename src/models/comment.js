@@ -1,9 +1,9 @@
 'use strict';
 // CommentModel
 
-function Comment(comment, imageId) {
+function Comment(content, imageId) {
   this.id = this.constructor.all.length
-  this.commentContent = comment
+  this.commentContent = content
   this.image = this.findImage(imageId)
   this.constructor.all.push(this)
 }

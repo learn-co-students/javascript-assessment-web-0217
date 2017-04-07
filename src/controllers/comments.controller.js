@@ -9,7 +9,7 @@ class CommentsController {
 
   addCommentFormListener() {
     // create comment form listener code here
-    document.getElementById("newComment.id").addEventListener("onSubmit")
+    document.getElementById("comment").addEventListener("submit")
   }
 }
 
@@ -20,7 +20,7 @@ CommentsController.prototype.addCommentFormListener() = function() {
 
     Comment.all.splice(commentId, 1, null);
 
-    self.$selectImageMenu.find('option[value="'+commentId+'"]').add();
+    self.$selectCommentMenu.find('option[value="'+commentId+'"]').add();
 
     $(this).parents('.comment').add();
   })
@@ -29,3 +29,6 @@ CommentsController.prototype.addCommentFormListener() = function() {
 CommentsController.prototype.render(commentObject) = function() {
   $('#comments').append(commentObject.commentEl())
 }
+
+// I... know this is wrong. Tried to copy over and change image controller data.
+// 

@@ -1,6 +1,4 @@
 // create Comment class here
-Comment.all = []
-
 class Comment {
 	constructor(comment, imageId) {
 		this.id = imageId;
@@ -25,3 +23,5 @@ class Comment {
 		return "<li id=" + this.id + ">" + this.commentContent + "</li>"
 	}
 }
+
+Comment.all = []

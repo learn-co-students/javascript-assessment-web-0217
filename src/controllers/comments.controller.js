@@ -19,6 +19,7 @@ class CommentsController {
         let commentContent = input.val()
         var comment = new Comment(commentContent, imageId)
         self.render(comment)
+        self.addDeleteOption(comment)
         input.val('')
       })
     })
@@ -26,5 +27,14 @@ class CommentsController {
 
   render(comment) {
     $(`#comments-${comment.image.id}`).append(comment.commentEl())
+  }
+
+  addDeleteOption(comment) {
+    var self = this
+    let button = ` <button id="button-${comment.id}">X</button>`
+    $(`#comment-${comment.id}`).append(button)
+    $(`#button-${comment.id}`).click(() => {
+      $(`#comment-${comment.id}`).remove()
+    })
   }
 }

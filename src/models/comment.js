@@ -18,6 +18,6 @@ class Comment {
   }
 
   commentEl() {
-    return `<li id=comment-${this.id}>${this.commentContent}</li>`
+    return `<li id=comment-${this.id}>${this.commentContent}<br></li>`
   }
 }

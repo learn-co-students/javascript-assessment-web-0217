@@ -5,3 +5,5 @@ Have questions/comments:
 
 Other things I added:
 1. Reset the input's value to '' after rendering a comment
+2. Added a line break after each comment to make them easier to read
+3. Added button to delete a comment, check it out in the CommentsController

@@ -15,7 +15,7 @@ Image.prototype.imageEl = function() {
     <ul id="image-${this.id}" data-id="${this.id}">
       <img src="${this.url}"></img>
       <ul id="comments-${this.id}"></ul>
-      <form id="add-comment" class="add-comment" data-id=${this.id} action="#" method="post">
+      <form id="add-comment" class="add-comment" data-id=${this.id})>
         <label for="comment-description">Comment: </label>
         <input type="text" id="comment-description-${this.id}" class="user-text" name="comment-description" placeholder="comment">
         <input type="submit" value="(+) add comment">

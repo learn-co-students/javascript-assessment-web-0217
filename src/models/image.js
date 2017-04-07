@@ -1,12 +1,12 @@
-'use strict';
+'use strict'
 // ImageModel
 
 function Image(title, url) {
-  this.id = this.constructor.all.length;
-  this.title = title;
-  this.url = url;
-  this.comments = [];
-  this.constructor.all.push(this);
+  this.id = this.constructor.all.length
+  this.title = title
+  this.url = url
+  this.comments = []
+  this.constructor.all.push(this)
 }
 
 Image.prototype.imageEl = function() {
@@ -21,8 +21,8 @@ Image.prototype.imageEl = function() {
         <input type="submit" value="(+) add comment">
       </form>
     </ul>
-  </div>`;
-};
+  </div>`
+}
 
 Image.load = function() {
   Image.defaults.map(function(image){
@@ -31,7 +31,7 @@ Image.load = function() {
   })
 }
 
-Image.all = [];
+Image.all = []
 Image.defaults = [
   {
     title: 'The Perfect Date',
@@ -73,4 +73,4 @@ Image.defaults = [
     title: 'The Bat Strikes Again',
     url: 'https://s3.amazonaws.com/learn-verified/NaNx10Batman.png'
   }
-];
+]

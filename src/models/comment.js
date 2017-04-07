@@ -37,3 +37,4 @@ Comment.all = []
 // comment.all is thrown into image.js like I have on like 34.
 // But it's not really returning anything if I just call it as is.
 // I think it would  return an empty array even though I do push things into it upon creation of an instance of Comment class (line 12)
+// readMe is asking for a return. confused.

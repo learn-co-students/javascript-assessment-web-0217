@@ -31,4 +31,4 @@ CommentsController.prototype.render(commentObject) = function() {
 }
 
 // I... know this is wrong. Tried to copy over and change image controller data.
-// 
+// not discouraged, just realizing there's a lot more I need to work on. This was quite a mess

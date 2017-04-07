@@ -15,7 +15,7 @@ class Comment {
 
 	findImage(imageId) {
 		return Image.all.find((image) => {
-			return image.imageId === imageId
+			return image.id === imageId
 		});
 	}
 

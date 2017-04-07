@@ -1,10 +1,10 @@
 class CommentsController {
 	constructor() {
 		this.$addCommentForm = $('.add-comment')
-		this.addCommentFormListener();
 	}
 
 	init() {
+		this.addCommentFormListener();
 	}
 
 	addCommentFormListener() {
@@ -13,7 +13,8 @@ class CommentsController {
 				event.preventDefault();
 				let parentInfo = $(event)[0].target.parentNode;
 				let value = event.currentTarget.children[1].value;
-				commentsController.render(new Comment(value, parentInfo.id))
+				let comment = new Comment(value, parseInt(parentInfo.dataset.id))
+				commentsController.render(comment);
 			})
 		});
 	}

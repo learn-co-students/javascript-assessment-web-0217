@@ -14,7 +14,7 @@ class CommentsController {
       event.preventDefault();
       const text=document.getElementById("comment-description-"+ this.dataset.id).value
       const comment=new Comment (this.dataset.id, text);
-      $(`#comments-${this.imageId}`).append(this.commentContent)
+      $(`#comments-${this.dataset.id}`).append(this.commentContent)
       // render(comment)
     });
 

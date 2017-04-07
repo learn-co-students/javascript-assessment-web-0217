@@ -14,6 +14,9 @@ class Comment {
 
 	findImage(imageId) {
 		let image = Image.all.find((image) => {
+			// the first condition here checks if the image exists
+			// because when you delete an image, the image controller 
+			// sets the image to null
 			return image && image.id === imageId
 		});
 		if (image) image.comments.push(this);

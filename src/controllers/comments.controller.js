@@ -4,10 +4,24 @@ class CommentsController {
   }
 
   init() {
-    // kick off controller from here
+    this.addCommentFormListener()
   }
 
   addCommentFormListener() {
-    // create comment form listener code here
+    this.$addCommentForm.on('submit', (event) =>{
+      event.preventDefault()
+      let imageId = event.target.dataset.id
+      let commentText = event.target.childNodes[3].value
+      let comment = new Comment(commentText, imageId)
+      event.target.childNodes[3].value = ''
+      return this.render(comment)
+    })
   }
+
+  render(comment) {
+    let id = comment.imageId
+    return $(`ul #comments-${id}`).append(comment.commentEl())
+  }
+
+
 }

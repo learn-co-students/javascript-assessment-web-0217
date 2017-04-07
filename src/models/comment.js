@@ -14,9 +14,11 @@ class Comment {
 	}
 
 	findImage(imageId) {
-		return Image.all.find((image) => {
+		let image = Image.all.find((image) => {
 			return image.id === imageId
 		});
+		if (image) image.comments.push(this);
+		return image;
 	}
 
 	commentEl() {

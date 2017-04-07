@@ -21,7 +21,7 @@ class CommentsController {
 
 	render(commentObj) {
 		let id = commentObj.id;
-		let $commentListSelector = $(`#${id} ul`);
+		let $commentListSelector = $(`#image-${id} ul`);
 		$commentListSelector.append(commentObj.commentEl());
 	}
 }

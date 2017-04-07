@@ -10,7 +10,18 @@ function Image(title, url) {
 }
 
 Image.prototype.imageEl = function() {
-  return '<div class="image"><h2><button class="destroy-image">x</button> '+this.title+'</h2><ul id="image-'+this.id+'" data-id="'+this.id+'"><img src="'+this.url+'"></img><ul id="comments-'+this.id+'"></ul><form id="add-comment" class="add-comment" data-id='+this.id+' action="#" method="post"><label for="comment-description">Comment: </label><input type="text" id="comment-description-'+this.id+'" class="user-text" name="comment-description" placeholder="comment"><input type="submit" value="(+) add comment"></form></ul></div>';
+  return `<div class="image">
+    <h2><button class="destroy-image">x</button>${this.title}</h2>
+    <ul id="image-${this.id}" data-id="${this.id}">
+      <img src="${this.url}"></img>
+      <ul id="comments-${this.id}"></ul>
+      <form id="add-comment" class="add-comment" data-id=${this.id} action="#" method="post">
+        <label for="comment-description">Comment: </label>
+        <input type="text" id="comment-description-${this.id}" class="user-text" name="comment-description" placeholder="comment">
+        <input type="submit" value="(+) add comment">
+      </form>
+    </ul>
+  </div>`;
 };
 
 Image.load = function() {

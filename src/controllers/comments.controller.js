@@ -4,10 +4,18 @@ class CommentsController {
   }
 
   init() {
-    // kick off controller from here
+    return this.addCommentFormListener()
   }
 
   addCommentFormListener() {
-    // create comment form listener code here
+    this.$addCommentForm.map((form) => {
+      var i = 0
+      $('input[type="submit"]').addEventListener("click", (e) => {
+        e.preventDefault()
+        let comment = Comment.init(Comment.all.length, $(`comment-description-${i}`).val(), i)
+        $(`ul#comments${i}`).html(comment.commentEl())
+      })
+      i++
+    })
   }
 }

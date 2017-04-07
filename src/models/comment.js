@@ -20,7 +20,7 @@ Comment.prototype.findImage = function(id) {
 }
 
 Comment.prototype.commentEl = function() {
-  return `<li class="image-comment image-${this.image.id}-comment" id="image-${this.image.id}-comment-${this.id}">
+  return `<li class="image-comment" id="image-${this.image.id}-comment-${this.id}">
             <p>${this.commentContent}</p>
           </li>`
 }

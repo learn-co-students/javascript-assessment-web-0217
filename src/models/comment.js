@@ -4,8 +4,9 @@ class Comment {
 	constructor(content, imageId){
 		this.content = content
 		this.imageId = imageId
-		this.commentId = this.constructor.allComments.length
+		this.commentId = allComments.length
 		this.addCommentToAll()
+		this.image = this.findImage(imageId)
 	}
 
 	addCommentToAll(){
@@ -26,6 +27,6 @@ class Comment {
 	}
 
 	commentEl(){
-		return '<li id="comment${this.commentId}">{this.comment}</li>'
+		return `<li id=comment${this.commentId}>${this.content}</li>`
 	}
 }

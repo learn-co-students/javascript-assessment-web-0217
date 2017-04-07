@@ -1,0 +1,9 @@
+Completed the assignment!
+Have questions/comments:
+1. The README says "please copy/paste your three class definitions into the solution.js file" but there were only two class definitions that we had to make?
+2. Why were we asked to make the controller before the models? This seems to go against what we've been told so far, and made it very confusing to work with. Was there a reason for this?
+
+Other things I added:
+1. Reset the input's value to '' after rendering a comment
+2. Added a line break after each comment to make them easier to read
+3. Added button to delete a comment, check it out in the CommentsController

@@ -5,8 +5,14 @@ function Image(title, url) {
   this.id = this.constructor.all.length;
   this.title = title;
   this.url = url;
-  this.comments = [];
+  this.comments = this.comment();
+  store.images.push(this)
   this.constructor.all.push(this);
+}
+comment() {
+  return store().comments.filter(function(comment) {
+    return comment.id === this.id
+  })
 }
 
 Image.prototype.imageEl = function() {

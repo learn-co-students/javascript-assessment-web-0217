@@ -4,10 +4,16 @@ class CommentsController {
   }
 
   init() {
-    // kick off controller from here
+    this.addCommentFormListener()
+    let $target = $(`ul.image-${comment.id}`)
+    Comment.prototype.commentEl($target, store.comments)
   }
 
   addCommentFormListener() {
-    // create comment form listener code here
+    $('form').each(function(element, index) {
+      element.on('submit', function (){
+        event.preventDefault()
+        createComment(comment, imageId)
+      })
+    })
   }
-}

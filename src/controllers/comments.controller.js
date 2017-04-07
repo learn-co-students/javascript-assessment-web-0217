@@ -8,6 +8,12 @@ class CommentsController {
   }
 
   addCommentFormListener() {
-    // create comment form listener code here
+    $(".add-comment").submit(function(){
+      new Comment(comment, imageId)
+  })
+}
+
+  render(commentObject){
+    $(`commentObject.parent`).append(commentObject)
   }
 }

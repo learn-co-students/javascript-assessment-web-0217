@@ -21,6 +21,6 @@ Comment.prototype.findImage = function(id) {
 
 Comment.prototype.commentEl = function() {
   return `<li class="image-comment" id="image-${this.image.id}-comment-${this.id}">
-            <p>${this.commentContent}</p>
+            <p>${this.commentContent}    <button class="destroy-comment" data-id=${this.id}>x</button></p>
           </li>`
 }

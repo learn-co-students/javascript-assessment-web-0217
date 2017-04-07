@@ -9,6 +9,7 @@ class CommentsController {
 
   init() {
     this.addCommentFormListener()
+    this.destroyCommentLiveEventListener()
   }
 
   render(commentObject) {
@@ -24,6 +25,14 @@ class CommentsController {
       let imageId = $(e.target).parents('ul').data('id')
       var comment = new Comment(content, imageId)
       self.render(comment)
+      this.children["comment-description"].value = ""
     })
   }
+
+  destroyCommentLiveEventListener(){
+    var self = this;
+    this.$wrapper.on('click', '.destroy-comment', function(){ //live event imageener
+      $(this).parents('li').remove()
+    });
+  };
 }

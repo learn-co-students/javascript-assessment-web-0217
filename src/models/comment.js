@@ -10,7 +10,7 @@ function Comment(comment, imageId) {
 
 Comment.all = []
 
-Comment.prototype.findImage(id) {
+Comment.prototype.findImage = function(id) {
   let image = Image.all[id]
   if (image) {
     image.comments.push(this)
@@ -19,7 +19,7 @@ Comment.prototype.findImage(id) {
   return
 }
 
-Comment.prototype.commentEl() {
+Comment.prototype.commentEl = function() {
   return `<li class="image-comment image-${this.image.id}-comment" id="image-${this.image.id}-comment-${this.id}">
             <p>${this.commentContent}</p>
           </li>`

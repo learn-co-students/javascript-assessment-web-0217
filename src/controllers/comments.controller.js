@@ -1,6 +1,10 @@
+'use strict';
+// Comments Controller
+
 class CommentsController {
   constructor() {
     this.$addCommentForm = $('.add-comment')
+    this.$wrapper = $('#wrapper')
   }
 
   init() {
@@ -8,6 +12,8 @@ class CommentsController {
   }
 
   addCommentFormListener() {
-    // create comment form listener code here
+    this.$wrapper.on('click', '.add-comment', function() {
+
+    })
   }
 }

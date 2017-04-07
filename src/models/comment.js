@@ -14,7 +14,7 @@ class Comment {
 
 	findImage(imageId) {
 		let image = Image.all.find((image) => {
-			return image.id === imageId
+			return image && image.id === imageId
 		});
 		if (image) image.comments.push(this);
 		return image;

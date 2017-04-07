@@ -1,12 +1,12 @@
 // create Comment class here
 'use strict';
 
-function Comment(comment, imageId) {
+let Comment = new Comment(comment, imageId) {
   this.id = imageId
   // this.findImage = function() {
   //   return document.getElementById(this.id)
   // }
-  this.image = findImage()
+  this.image = this.findImage()
   this.commentContent = function() {
     return this.comment.toString()
   this.all.push(this)

@@ -24,6 +24,11 @@ Image.prototype.imageEl = function() {
   </div>`;
 };
 
+Image.prototype.findImage = function (imageId) {
+  return Image.all[imageId]
+
+};
+
 Image.load = function() {
   Image.defaults.map(function(image){
     var newImage = new Image(image.title, image.url)

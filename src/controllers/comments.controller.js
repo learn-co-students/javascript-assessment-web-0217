@@ -5,6 +5,7 @@ class CommentsController {
 
   init() {
     this.addCommentFormListener()
+    Comment.all = []
   }
 
   addCommentFormListener() {
@@ -18,10 +19,15 @@ class CommentsController {
     })
   }
 
-  render(comment) {
-    let id = comment.imageId
-    return $(`ul #comments-${id}`).append(comment.commentEl())
+
+  static deleteComment(event) {
+    event.preventDefault()
+    let $target = $(event.target.parentElement)
+    return $target.remove()
   }
 
-
+  render(comment) {
+    let id = comment.imageId
+    return comment.$postTarget.append(comment.commentEl())
+  }
 }

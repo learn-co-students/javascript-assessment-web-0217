@@ -1,14 +1,15 @@
 // create Comment class here
 class Comment {
-	constructor(comment, imageId) {
-		this.id = imageId;
-		this.image = this.findImage(imageId);
-		this.commentContent = comment;
-		Comment.all.push(this);
-	}
 
 	static all() {
-		return Comment.all;
+		return Comment.allComments;
+	}
+
+	constructor(comment, imageId) {
+		this.id = Comment.all().length + 1;
+		this.image = this.findImage(imageId);
+		this.commentContent = comment;
+		Comment.all().push(this);
 	}
 
 	findImage(imageId) {
@@ -24,4 +25,4 @@ class Comment {
 	}
 }
 
-Comment.all = []
+Comment.allComments = [];

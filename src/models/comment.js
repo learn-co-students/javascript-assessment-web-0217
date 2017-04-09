@@ -20,7 +20,11 @@ Comment.all = []
 
 Comment.prototype.findImage = (imageID) => {
   let id = parseInt(imageID)
-  let imageObject = Image.all.find(id)
+  var imageObject = Image.all.find((object)=>{
+    if(object.id === id){
+      return object
+    }
+  })
   imageObject.comments.push(this.comment)
-  return Image.all.find(id)
+  return imageObject
 }

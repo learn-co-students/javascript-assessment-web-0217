@@ -1,27 +1,24 @@
-// create Comment class here
-class Comment {
+class Comment{
   constructor(comment, imageId){
-    this.id = this.constructor.all.length
     this.image = this.findImage(imageId)
-    this.comment = comment.text
+    this.comment = comment
     Comment.all.push(this)
   }
 
-  findImage(imageId){
-    Image.all.forEach((image)=>{
-      if(image.id==imageId){
-        image.comments.push(this.comment)
-        return image
-      }
+
+   findImage(imageId){
+    let img = Image.all.find((image) => {
+      return image.id === imageId
     })
+    img.comments.push(this)
+    return img
   }
 
   commentEl(){
-    return (`<li id=this.id> this.comment </li>`)
-  }
-
-  static all(){
-    return constructor.all
+    return `<li id=${this.id}>${this.comment}</li>`
   }
 }
+
+
+
 Comment.all = []

@@ -4,16 +4,29 @@ class CommentsController {
   }
 
   init() {
-    // kick off controller from here
+    this.addCommentFormListener()
+  }
+
+  static render(commentObject){
+    let appropriateUl = $(`#comments-${commentObject.image.id}`)
+    appropriateUl.append(commentObject.commentEl())
+  }
+
+  static handleCommentFormSubmit(e, imgId, commentText){
+    e.preventDefault()
+    let newComment = new Comment(commentText, imgId)
+    CommentsController.render(newComment)
   }
 
   addCommentFormListener() {
-    $(".add-comment").submit(function(){
-      new Comment(comment, imageId)
-  })
-}
-
-  render(commentObject){
-    $(`commentObject.parent`).append(commentObject)
+    $('.add-comment').each(function(id){
+      const persId = id
+      $(`#image-${id}`).submit(() => {
+        let commentText = $(`#comment-description-${persId}`).val()
+        CommentsController.handleCommentFormSubmit(event, persId, commentText)
+      })
+    })
   }
+
+
 }

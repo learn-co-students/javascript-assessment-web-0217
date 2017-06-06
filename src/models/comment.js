@@ -1,18 +1,20 @@
 // create Comment class here
 class Comment {
-  var comments = []
-  constructor(comment, imageId){
+  constructor(imageId,comment){
+    this.id = this.constructor.all.length;
     this.comment = comment;
     this.imageId = imageId;
-    this.all = comments.push({[comment]: imageId})
+    this.constructor.all.push(this);
   }
 
  findImage(imageId){
-
+  var img = Image.all[imageId];
+  img.comments.push(this);
  }
 
  commentEl(){
-
+   return `<li id=${this.id}>${this.comment}</li>`
  }
 
 }
+Comment.all=[]
